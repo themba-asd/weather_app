@@ -3,39 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="style.css">
-    <title>WeatherCrafts</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&family=Itim&display=swap');
+    </style>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/template.css">
+    <link rel="stylesheet" href="css/mobilescreens.css">
+    <link rel="stylesheet" href="css/largescreens.css">
+    <link rel="stylesheet" href="css/print.css">
+    <title>ResumeCrafts</title>
 </head>
-<body>
-    <main>
-        <div class="container">
-            <div class="search">
-                <input type="text" id="search-bar" placeholder="Search">
-                <button id="search-btn"><img src="images\search.png"></button>
-            </div>
-            <div class="weather">
-                <h3>Weather in <span id="city"></span></h3>
-                <h2 id=><span id="temperature"></span>℃</h2>
-                <div>
-                    <p><span id="description"></span></p>
-                    <p>Humidity: <span id="humidity"></span>%</p>
-                    <p>Wind Speed: <span id="wind-speed"></span> km/h</p>
-                </div>
-            </div>
-            <div class="loading">
-                <p>Loading...</p>
+<body>  
+    <main id="user-section">
+        <div class="landing">
+            <h3> ௹ ResumeCrafts </h3>
+            <h4>
+                a free Mordern <br> Resume builder, Easy <br> and Quick. 
+                simply save pdf.
+            </h4>
+            <p>
+                Get started for free, 
+                and choose what's right for you.
+            </p>
+            <button id="create-resume-btn">Get Started</button>
+            <div class="summary">
+                <details id="about-us">
+                    <summary>About Us</summary>  
+                        <p>ResumeCrafts is a free open source online Resume builder, that's quick and easy. 
+                            We've taken out the hassle of creating Resumes. 
+                            You can simply build one in minutes. 
+                            No sign-up required just click, fill in and you're done. 
+                            Your privacy is at the core, no user data is collected.
+                        </p>
+                        <p class="my-info">A mini-project by <a href="mailto:hp.asd6@gmail.com" id="my-email">Thembalakhe Malindi</a></p>
+                        <p class="my-info">&copy; 2023 ResumeCrafts</p>
+                </details>
+                <details id="tips">
+                    <summary>Click for tips!</summary>  
+                        <p>
+                            For small screens, 
+                            rotate screen to get a clear view of the template!
+                        </p>
+                        <p> + New features! </p>
+                </details>
             </div>
         </div>
-        <details class="about-us">
-            <summary>About Us!</summary>  
-                <p>WeatherCrafts uses the 
-                    <a href="http://openweathermap.org">openweathermap</a> API
-                    to get you a quick summary of the weather.
-                </p>
-                <p class="my-info">A mini-project by <a href="mailto:hp.asd6@gmail.com" id="my-email">Thembalakhe Malindi</a></p>
-                <p class="my-info">&copy; 2023 WeatherCrafts</p>
-        </details>
+        <!--scroll container-->
+        <div class="scroll-container delay-display">
+            <div>
+                <div class="block personal-details">
+                    <h4>Personal Details</h4>
+                    <div class="inputs">
+                        <input type="text" id="fullName" placeholder="Full Name">
+                        <input type="email" id="email" placeholder="Email" autocomplete="email">              
+                        <input type="text" id="contact" placeholder="Contact Number">
+                    </div>
+                    <div class="btns">
+                        <button id="save-personal-details">+</button>
+                    </div>
+                </div>
+                <div class="block address">
+                    <h4>Address</h4>
+                    <address class="inputs">
+                        <input type="text" id="street" placeholder="Street">
+                        <input type="text" id="suburb" placeholder="Suburb">
+                        <input type="text" id="city" placeholder="City">
+                    </address>
+                    <div class="btns">
+                        <button id="save-address-details">+</button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="block career-objective">
+                    <h4>Career Objective</h4>
+                    <div class="inputs">
+                        <input type="text" id="career-objective-header" placeholder="Give a heading (Optional)">
+                        <textarea id="career-objective-content" cols="30" rows="10" placeholder="Tell us about yourself, a brief statement highlighting your career aspirations"></textarea>
+                    </div>
+                    <div class="btns">
+                        <button id="save-career-details">+</button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <form class="block education">
+                    <h4>Education</h4>
+                    <div class="inputs">
+                        <input type="text" id="school-name" placeholder="Institution Name">
+                        <input type="number" id="final-year" placeholder="Final Year">
+                        <input type="text" id="qualification" placeholder="Name of Qualification">
+                    </div>
+                    <div class="btns">
+                        <button type="reset" id="add-education">+</button>
+                    </div>
+                </form>
+                <div class="block skills">
+                    <h4>Skills</h4>
+                    <form class="soft-skills">
+                        <div class="inputs">
+                            <input type="text" id="softSkill" placeholder="Add a soft-skill">
+                            <div class="btns">
+                                <button type="reset" id="add-soft-skill">+</button>
+                            </div>
+                        </div>
+                    </form>
+                    <form class="hard-skills">
+                        <div class="inputs">
+                            <input type="text" id="hardSkill" placeholder="Add a hard-skill">
+                            <div class="btns">
+                                <button type="reset" id="add-hard-skill">+</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <form class="block experience">
+                    <h4>Experience</h4>
+                    <div class="inputs">
+                        <input type="text" id="workplace" placeholder="Name of Company">
+                        <input type="text" id="start-date" placeholder="Select Start Date" onmouseover="(this.type='date')" onclick="(this.type='date')">
+                        <input type="text" id="end-date" placeholder="Select End Date" onmouseover="(this.type='date')" onclick="(this.type='date')">
+                        <input type="text" id="work-position" placeholder="Position Held">
+                        <textarea id="work-duty" cols="30" rows="10" placeholder="A brief of work duties or roles"></textarea>
+                    </div>
+                    <div class="btns">
+                        <button type="reset" id="add-experience">+</button>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <form class="block references">
+                    <h4>References</h4>
+                    <div class="inputs">
+                        <div class="dropdown">
+                            <input type="text" id="ref-workplace" placeholder=" Company">
+                            <select class="dropdown-list delay-display" id="company-dropdown-list">
+                                <option>Select Company</option>
+                            </select>
+                        </div>
+                        <input type="text" id="ref-person" placeholder="Person">
+                        <input type="text" id="ref-position" placeholder="Position">
+                        <input type="number" id="ref-contact" placeholder="Contact Number">
+                        <input type="text" id="ref-email" placeholder="Email (optional)">
+                    </div>
+                    <div class="btns">
+                        <button type="reset" id="add-reference">+</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--scroll container ends here-->
+        <p class="scroll-tip delay-display"> &#10235; scroll sideways for more forms &#10236;</p>
     </main>
-    <script src="app.js"></script>
+    <div class="bar-btns delay-display">
+        <button class="customs-btn delay-display">Customs</button>
+        <button class="print-btn delay-display" onclick="window.print();">Download PDF</button>
+        <button class="preview-btn">Preview </button>
+    </div>
+    <!--customizations-->
+    <div class="user-customs delay-display">
+        <div class="color-picker customs">
+            <label for="color-picker">Select Color</label>
+            <input type="color" id="color-picker">
+        </div>
+        <div class="font-custom-dropdown customs">
+            <select class="dropdown-list" id="font-dropdown-list" >
+                <option value="">Select Font</option>
+                <option value="Verdana, sans-serif">Verdana</option>
+                <option value="Gill Sans, sans-serif">Gill Sans</option>
+                <option value="Comic Sans MS, cursive">Comic Sans MS</option>
+                <option value="Times New Roman, serif">Times New Roman</option>
+                <option value="'Franklin Gothic Medium', sans-serif">Franklin Gothic Medium</option>
+            </select>
+        </div>
+        <div class="heading-size customs">
+            <label for="h2-header-size">Adjust Headings</label>
+            <input type="range" id="h2-header-size" max="40">
+        </div>
+        <details id="print-tips">
+            <summary>print tips!</summary> 
+            <p>
+                In some devices the print dialog shows an empty last page
+                use the 'page' options, available from the dialog to
+                select the number of page/s to save, excluding the last(empty) page.
+            </p>
+        </details>
+    </div>
+    <!-- where the magic happens, no api, no database, just plain messy vanilla and such-->
+    <section id="resume-section" class="delay-display">
+        <div class="aside">
+            <div class="user-name block">
+                <h1 id="full-name-tag"></h1>
+            </div>
+            <div class="user-education block">
+                <h2 class="h2-header" id="education-heading-tag">Education</h2>
+                <ul id="education-list-tag"></ul>
+            </div>
+            <div class="user-skills block">
+                <div class="soft-skills">
+                    <h2 class="h2-header" id="soft-skills-heading">Soft skills</h2>
+                    <ul id="soft-skills-list-tag"></ul>
+                </div>
+                <div class="hard-skills">
+                    <h2 class="h2-header" id="hard-skills-heading-tag">Technical skills</h2>
+                    <ul id="hard-skills-list-tag"></ul>
+                </div>
+            </div>
+            <div class="user-work-reference block">
+                <h2 class="h2-header" id="work-reference-heading-tag">References</h2>
+                <ul id="work-reference-list"></ul>
+            </div>
+        </div>
+        <div class="centre">
+            <div class="user-personal-information block">
+                <div class="contact-information">
+                    <div id="contact-information-tag">
+                        <p id="contact-info-tag"></p>
+                        <p id="email-info-tag"></p>
+                    </div>
+                    <div class="user-address">
+                        <p id="street-address-tag"></p>
+                        <p id="suburb-address-tag"></p>
+                        <p id="city-address-tag"></p>
+                    </div>
+                </div>
+                <h2 class="h2-header" id="career-objective-heading">Career Objective</h2>
+                <div class="user-career-objective">
+                    <h3 id="career-objective-heading"></h3>
+                    <p id="career-objective-para-tag"></p>
+                </div>
+            </div>
+            <div class="user-work-experience block">
+                <h2 class="h2-header" id="user-work-experience-heading">Experience</h2>
+                <ul id="work-experience-list-tag"></ul>
+            </div>      
+        </div>
+    </section>
+    <script src="app.js" defer></script>
+    <!--Thembalakhe Malindi-->
 </body>
 </html>

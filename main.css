@@ -1,0 +1,54 @@
+*{  margin: 0; padding: 0; box-sizing: border-box; border-radius: 0; font-family: 'Comic Neue', cursive;}
+main input,
+main textarea {
+    resize: none;
+    border: none;
+    border-bottom: solid 1px grey;
+}
+main input::placeholder{
+    text-align: end;
+}
+main textarea {
+    border: solid 1px grey;
+}
+main h4 {
+    font-size: large;
+}
+button {
+    border: none;
+    outline: none;
+    width: fit-content;
+    font-size: large;
+    border-radius: 0.5em;
+    background: transparent;
+}
+.landing {
+    display: grid;
+    padding: 2em;
+    min-height: 100svh;
+    gap: 3em;
+    background-color: rgb(224, 225, 221);
+}
+.landing h3 {color: rgb(13, 27, 42);}
+.landing h4, 
+.landing > p {color: rgb(27, 38, 59);}
+.landing h3, 
+.landing h4 {
+    font: normal small-caps bolder xx-large 'Itim', cursive;;
+}
+button:not(.btns button) {
+    padding: 0.45em 0.9em;
+    color: #fff;
+    background-color: rgb(65, 90, 119);
+}
+.scroll-tip {
+    text-align: center;
+    color: grey;
+}
+#pop-up-msg {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.5rem;
+    background-color: slategrey;
+}
